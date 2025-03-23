@@ -1,90 +1,12 @@
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #1a1a1a; /* Fondo oscuro, típico de temas cripto */
-    color: #ffffff; /* Texto blanco para contraste */
-    line-height: 1.6;
-}
-
-header {
-    background-color: #0d7377; /* Verde-azul inspirado en blockchain */
-    padding: 20px;
-    text-align: center;
-    border-bottom: 3px solid #14ffec; /* Acento vibrante */
-}
-
 header h1 {
     margin: 0;
     font-size: 2.5em;
     color: #14ffec;
 }
-
-header p {
-    margin: 5px 0 0;
-    font-size: 1.2em;
-    color: #ffffff;
+strong{
+color:lightgreen;
 }
 
-section {
-    padding: 40px 20px;
-    max-width: 800px;
-    margin: 0 auto; /* Centra el contenido */
-}
-
-section h2 {
-    color: #14ffec; /* Color vibrante para títulos */
-    font-size: 2em;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #14ffec;
-    display: inline-block;
-    padding-bottom: 5px;
-}
-
-section p {
-    font-size: 1.1em;
-    color: #d3d3d3; /* Gris claro para el texto */
-}
-
-section strong {
-    color: #ffffff; /* Resalta texto en negrita */
-}
-
-section em {
-    color: #14ffec; /* Resalta cursivas */
-}
-
-footer {
-    background-color: #0d7377;
-    padding: 20px;
-    text-align: center;
-    font-size: 0.9em;
-    border-top: 3px solid #14ffec;
-}
-
-footer p {
-    margin: 5px 0;
-}
-
-/* Responsividad */
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 2em;
-    }
-
-    header p {
-        font-size: 1em;
-    }
-
-    section {
-        padding: 20px 10px;
-    }
-
-    section h2 {
-        font-size: 1.5em;
-    }
-
-    section p {
-        font-size: 1em;
-    }
+.prueba{
+text-decoration:underline dotted lightgreen 3px;
 }

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfica de Criptomonedas Elegante</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Cambiado a min-height para evitar recortes */
+            margin: 0;
+            background-color: #FFFFFF; /* Fondo blanco */
+        }
+        .chart-container {
+            width: 100%;
+            max-width: 900px; /* Máximo ancho para pantallas grandes */
+            padding: 20px;
+            box-sizing: border-box; /* Incluye padding en el ancho */
+        }
+        canvas {
+            width: 100% !important; /* Forzar que el canvas ocupe el contenedor */
+            height: auto !important; /* Mantener proporciones */
+            background-color: #FFFFFF; /* Fondo blanco del gráfico */
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+
+        /* Media queries para pantallas pequeñas */
+        @media (max-width: 768px) {
+            .chart-container {
+                padding: 10px; /* Reducir padding en pantallas pequeñas */
+            }
+            canvas {
+                border-radius: 8px; /* Bordes más suaves en móviles */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .chart-container {
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-container">
+        <canvas id="cryptoChart"></canvas>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('cryptoChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['India', 'Corea del Sur', 'Brasil', 'España', 'Estados Unidos', 'México', 'Alemania', 'China'],
+                datasets: [
+                    {
+                        label: '2019',
+                        data: [7, 7, 6, 5, 5, 4, 3, 2],
+                        backgroundColor: 'rgba(74, 144, 226, 0.6)', // Azul claro para 2019
+                        borderColor: 'rgba(74, 144, 226, 1)',
+                        borderWidth: 1.5
+                    },
+                    {
+                        label: '2021',
+                        data: [18, 14, 12, 10, 9, 8, 6, 3],
+                        backgroundColor: 'rgba(30, 95, 168, 0.6)', // Azul medio para 2021
+                        borderColor: 'rgba(30, 95, 168, 1)',
+                        borderWidth: 1.5
+                    },
+                    {
+                        label: '2024',
+                        data: [24, 16, 15, 12, 17, 10, 6, 3],
+                        backgroundColor: 'rgba(10, 61, 122, 0.6)', // Azul oscuro para 2024
+                        borderColor: 'rgba(10, 61, 122, 1)',
+                        borderWidth: 1.5
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true, // Mantener proporciones, pero ajustable
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Países',
+                            color: '#333333',
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        },
+                        ticks: {
+                            color: '#333333',
+                            maxRotation: 45, // Rotar etiquetas en pantallas pequeñas
+                            minRotation: 45,
+                            font: {
+                                size: window.innerWidth <= 480 ? 10 : 12 // Tamaño dinámico
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(224, 224, 224, 0.5)'
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        max: 30,
+                        title: {
+                            display: true,
+                            text: 'Porcentaje (%)',
+                            color: '#333333',
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        },
+                        ticks: {
+                            color: '#333333',
+                            stepSize: 5,
+                            font: {
+                                size: window.innerWidth <= 480 ? 10 : 12
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(224, 224, 224, 0.5)'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            color: '#333333',
+                            font: {
+                                size: window.innerWidth <= 480 ? 10 : 12,
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Uso de Criptomonedas por País (2019 vs 2021 vs 2024)',
+                        color: '#333333',
+                        font: {
+                            size: window.innerWidth <= 480 ? 14 : 18,
+                            weight: 'bold'
+                        },
+                        padding: {
+                            top: 10,
+                            bottom: 20
+                        }
+                    }
+                },
+                animation: {
+                    duration: 1500,
+                    easing: 'easeInOutQuart'
+                },
+                layout: {
+                    padding: {
+                        left: 10,
+                        right: 10,
+                        top: 10,
+                        bottom: 10
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

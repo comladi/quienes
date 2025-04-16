@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfica de Criptomonedas Elegante</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #FFFFFF; /* Fondo blanco */
+        }
+        canvas {
+            max-width: 900px;
+            width: 100%;
+            background-color: #FFFFFF; /* Fondo blanco del gráfico */
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="cryptoChart"></canvas>
+
+    <script>
+        const ctx = document.getElementById('cryptoChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['India', 'Corea del Sur', 'Brasil', 'España', 'Estados Unidos', 'México', 'Alemania', 'China'],
+                datasets: [
+                    {
+                        label: '2019',
+                        data: [7, 7, 6, 5, 5, 4, 3, 2],
+                        backgroundColor: 'rgba(74, 144, 226, 0.6)', // Azul claro para 2019
+                        borderColor: 'rgba(74, 144, 226, 1)',
+                        borderWidth: 1.5
+                    },
+                    {
+                        label: '2021',
+                        data: [18, 14, 12, 10, 9, 8, 6, 3],
+                        backgroundColor: 'rgba(30, 95, 168, 0.6)', // Azul medio para 2021
+                        borderColor: 'rgba(30, 95, 168, 1)',
+                        borderWidth: 1.5
+                    },
+                    {
+                        label: '2024',
+                        data: [24, 16, 15, 12, 17, 10, 6, 3],
+                        backgroundColor: 'rgba(10, 61, 122, 0.6)', // Azul oscuro para 2024
+                        borderColor: 'rgba(10, 61, 122, 1)',
+                        borderWidth: 1.5
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Países',
+                            color: '#333333', // Gris oscuro para texto
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        },
+                        ticks: {
+                            color: '#333333'
+                        },
+                        grid: {
+                            color: 'rgba(224, 224, 224, 0.5)' // Gris claro para cuadrícula
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        max: 30, // Ajustado para el máximo (24%)
+                        title: {
+                            display: true,
+                            text: 'Porcentaje (%)',
+                            color: '#333333',
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        },
+                        ticks: {
+                            color: '#333333',
+                            stepSize: 5
+                        },
+                        grid: {
+                            color: 'rgba(224, 224, 224, 0.5)' // Gris claro para cuadrícula
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            color: '#333333',
+                            font: {
+                                size: 12,
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Uso de Criptomonedas por País (2019 vs 2021 vs 2024)',
+                        color: '#333333',
+                        font: {
+                            size: 18,
+                            weight: 'bold'
+                        },
+                        padding: {
+                            top: 10,
+                            bottom: 20
+                        }
+                    }
+                },
+                animation: {
+                    duration: 1500,
+                    easing: 'easeInOutQuart'
+                }
+            }
+        });
+    </script>
+</body>
+</html>

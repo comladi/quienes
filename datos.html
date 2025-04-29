@@ -11,37 +11,46 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh; /* Cambiado a min-height para evitar recortes */
+            min-height: 100vh;
             margin: 0;
-            background-color: #FFFFFF; /* Fondo blanco */
+            background-color: #FFFFFF;
         }
         .chart-container {
             width: 100%;
-            max-width: 900px; /* Máximo ancho para pantallas grandes */
+            max-width: 900px;
             padding: 20px;
-            box-sizing: border-box; /* Incluye padding en el ancho */
+            box-sizing: border-box;
         }
         canvas {
-            width: 100% !important; /* Forzar que el canvas ocupe el contenedor */
-            height: auto !important; /* Mantener proporciones */
-            background-color: #FFFFFF; /* Fondo blanco del gráfico */
+            width: 100% !important;
+            height: auto !important;
+            max-height: 500px; /* Límite de alto para pantallas grandes */
+            background-color: #FFFFFF;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         /* Media queries para pantallas pequeñas */
         @media (max-width: 768px) {
+            body {
+                min-height: auto; /* Evitar que el body sea demasiado alto */
+                padding: 10px 0; /* Añadir algo de padding vertical */
+            }
             .chart-container {
-                padding: 10px; /* Reducir padding en pantallas pequeñas */
+                padding: 10px;
             }
             canvas {
-                border-radius: 8px; /* Bordes más suaves en móviles */
+                max-height: 400px; /* Reducir alto en tablets */
+                border-radius: 8px;
             }
         }
 
         @media (max-width: 480px) {
             .chart-container {
                 padding: 5px;
+            }
+            canvas {
+                max-height: 300px; /* Reducir aún más el alto en móviles pequeños */
             }
         }
     </style>
@@ -61,21 +70,21 @@
                     {
                         label: '2019',
                         data: [7, 7, 6, 5, 5, 4, 3, 2],
-                        backgroundColor: 'rgba(74, 144, 226, 0.6)', // Azul claro para 2019
+                        backgroundColor: 'rgba(74, 144, 226, 0.6)',
                         borderColor: 'rgba(74, 144, 226, 1)',
                         borderWidth: 1.5
                     },
                     {
                         label: '2021',
                         data: [18, 14, 12, 10, 9, 8, 6, 3],
-                        backgroundColor: 'rgba(30, 95, 168, 0.6)', // Azul medio para 2021
+                        backgroundColor: 'rgba(30, 95, 168, 0.6)',
                         borderColor: 'rgba(30, 95, 168, 1)',
                         borderWidth: 1.5
                     },
                     {
                         label: '2024',
                         data: [24, 16, 15, 12, 17, 10, 6, 3],
-                        backgroundColor: 'rgba(10, 61, 122, 0.6)', // Azul oscuro para 2024
+                        backgroundColor: 'rgba(10, 61, 122, 0.6)',
                         borderColor: 'rgba(10, 61, 122, 1)',
                         borderWidth: 1.5
                     }
@@ -83,7 +92,7 @@
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: true, // Mantener proporciones, pero ajustable
+                maintainAspectRatio: true,
                 scales: {
                     x: {
                         title: {
@@ -97,10 +106,10 @@
                         },
                         ticks: {
                             color: '#333333',
-                            maxRotation: 45, // Rotar etiquetas en pantallas pequeñas
+                            maxRotation: 45,
                             minRotation: 45,
                             font: {
-                                size: window.innerWidth <= 480 ? 10 : 12 // Tamaño dinámico
+                                size: window.innerWidth <= 480 ? 8 : 10 /* Reducir tamaño en móviles */
                             }
                         },
                         grid: {
@@ -123,7 +132,7 @@
                             color: '#333333',
                             stepSize: 5,
                             font: {
-                                size: window.innerWidth <= 480 ? 10 : 12
+                                size: window.innerWidth <= 480 ? 8 : 10
                             }
                         },
                         grid: {
@@ -137,7 +146,7 @@
                         labels: {
                             color: '#333333',
                             font: {
-                                size: window.innerWidth <= 480 ? 10 : 12,
+                                size: window.innerWidth <= 480 ? 8 : 10,
                                 weight: 'bold'
                             }
                         }
@@ -147,12 +156,12 @@
                         text: 'Uso de Criptomonedas por País (2019 vs 2021 vs 2024)',
                         color: '#333333',
                         font: {
-                            size: window.innerWidth <= 480 ? 14 : 18,
+                            size: window.innerWidth <= 480 ? 12 : 16, /* Reducir título */
                             weight: 'bold'
                         },
                         padding: {
                             top: 10,
-                            bottom: 20
+                            bottom: 15
                         }
                     }
                 },
@@ -162,10 +171,10 @@
                 },
                 layout: {
                     padding: {
-                        left: 10,
-                        right: 10,
-                        top: 10,
-                        bottom: 10
+                        left: 5, /* Reducir padding en móviles */
+                        right: 5,
+                        top: 5,
+                        bottom: 5
                     }
                 }
             }

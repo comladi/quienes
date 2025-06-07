@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios de Mantenimiento y Asesoramiento Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #004aad;
+            color: #fff;
+            text-align: center;
+            padding: 2em 0;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+            background: #333;
+            padding: 1em;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1em;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #ffd700;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 2em;
+        }
+        .section {
+            background: #fff;
+            padding: 2em;
+            margin-bottom: 1em;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            color: #004aad;
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+        }
+        .service-card {
+            flex: 1 1 300px;
+            background: #e9ecef;
+            padding: 1em;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .service-card h3 {
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+        }
+        form input, form textarea {
+            padding: 0.8em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+        form button {
+            background: #004aad;
+            color: #fff;
+            padding: 0.8em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        form button:hover {
+            background: #003087;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 2em;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+            .service-card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Soluciones Tecnológicas</h1>
+        <p>Tu aliado en mantenimiento de equipos y presencia web</p>
+    </header>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="container">
+        <div class="section" id="inicio">
+            <h2>Bienvenidos</h2>
+            <p>Ofrecemos servicios profesionales de <strong>mantenimiento preventivo de equipos de cómputo en línea</strong> y <strong>asesoramiento personalizado</strong> para encontrar el mejor hosting y dominios web para tu negocio o proyecto personal.</p>
+        </div>
+        <div class="section" id="servicios">
+            <h2>Nuestros Servicios</h2>
+            <div class="services">
+                <div class="service-card">
+                    <h3>Mantenimiento Preventivo en Línea</h3>
+                    <p>Optimizamos tus equipos de cómputo de forma remota: limpieza de software, actualización de sistemas, eliminación de virus y mejora del rendimiento.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Asesoramiento para Hosting</h3>
+                    <p>Te ayudamos a elegir el hosting ideal según tus necesidades, comparando opciones como SiteGround, Bluehost, HostGator y más.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Compra de Dominios Web</h3>
+                    <p>Te guiamos en la selección y registro de dominios con proveedores confiables como GoDaddy, Namecheap o Google Domains.</p>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="contacto">
+            <h2>Contáctanos</h2>
+            <p>¿Listo para optimizar tus equipos o iniciar tu proyecto web? Déjanos tus datos y te contactaremos.</p>
+            <form action="mailto:tuemail@ejemplo.com" method="post" enctype="text/plain">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="email" name="email" placeholder="Correo electrónico" required>
+                <textarea name="mensaje" placeholder="Describe tu necesidad" rows="5" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Soluciones Tecnológicas. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
